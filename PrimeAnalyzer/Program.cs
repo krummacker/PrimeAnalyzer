@@ -63,16 +63,11 @@ namespace PrimeAnalyzer
                 }
             }
 
-            // if we interated through the loop until this point then
+            // if we iterated through the loop until this point then
             // n is already a prime
             result.Add(n);
 
             return result;
-        }
-
-        private string GetDebuggerDisplay()
-        {
-            return ToString();
         }
     }
 }
