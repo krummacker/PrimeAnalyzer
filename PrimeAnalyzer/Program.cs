@@ -5,81 +5,74 @@ namespace PrimeAnalyzer
 {
     class Program
     {
-        private static void Main()
+        private static void Main(string[] args)
         {
-            for (int i = 2; i < 1000; ++i)
+            int end = 1000;
+            if (args.Length != 0)
+            {
+                end = int.Parse(args[0]);
+            }
+
+            for (int i = 0; i < end; ++i)
             {
                 Console.Write(i + " is");
-                if (!IsPrime(i))
-                {
-                    Console.Write(" not");
-                }
-                Console.Write(" a prime number.");
-                if (!IsPrime(i))
-                {
-                    Console.Write(" Its prime factors are: ");
 
-                    List<int> primeFactors = ComputePrimeFactors(i);
-
-                    for (int j = 0; j < primeFactors.Count - 1; ++j)
-                    {
-                        Console.Write(primeFactors[j]);
-                        Console.Write(", ");
-                    }
-                    Console.Write(primeFactors[^1]);
+                var primeFactors = ComputePrimeFactors(i);
+                switch (primeFactors.Count)
+                {
+                    case 0:
+                        Console.Write(" not a prime number (by definition).");
+                        break;
+                    case 1:
+                        Console.Write(" a prime number.");
+                        break;
+                    default:
+                        Console.Write(" not a prime number.");
+                        Console.Write(" Its prime factors are: ");
+                        for (int j = 0; j < primeFactors.Count - 1; ++j)
+                        {
+                            Console.Write(primeFactors[j]);
+                            Console.Write(", ");
+                        }
+                        Console.Write(primeFactors[^1]);
+                        break;
                 }
                 Console.WriteLine();
             }
         }
 
+        /// <summary>For n>1, returns the list of prime numbers which,
+        /// multiplied with each other, result in n. For n<=1, returns the
+        /// empty list.</summary>
+        /// <param name="n">The number to split into prime factors.</param>
         private static List<int> ComputePrimeFactors(int n)
         {
+            if (n <= 1)
+            {
+                return new List<int>();
+            }
+
             List<int> result = new();
-
-            if (IsPrime(n))
-            {
-                // If n is a prime then return n itself
-                result.Add(n);
-            }
-            else
-            {
-                // Otherwise find the smallest prime factor
-                for (int i = 2; i < n; ++i)
-                {
-                    if (n % i == 0)
-                    {
-                        // no remainder means that i is the smallest factor
-                        result.Add(i);
-
-                        // divide the number by this smallest factor and recurse
-                        result.AddRange(ComputePrimeFactors(n / i));
-
-                        break;
-                    }
-                }
-            }
-            return result;
-        }
-
-        private static bool IsPrime(int n)
-        {
-            // by definition primes must always be greater than 1
-            if (n < 2)
-            {
-                return false;
-            }
-
             for (int i = 2; i < n; ++i)
             {
                 if (n % i == 0)
                 {
-                    // no remainder means that this is not a prime
-                    return false;
+                    result.Add(i);
+                    result.AddRange(ComputePrimeFactors(n / i));
+                    return result;
                 }
             }
 
-            // the if above was never true, hence this must be a prime
-            return true;
+            // if we interated through the loop until this point then
+            // n is already a prime
+            result.Add(n);
+
+            return result;
+        }
+
+        private string GetDebuggerDisplay()
+        {
+            return ToString();
         }
     }
 }
