@@ -5,6 +5,13 @@ namespace PrimeAnalyzer
 {
     class Program
     {
+        /// <summary>a constant for a list of int with no elements</summary>
+        private static readonly List<int> EmptyList = new();
+
+        /// <summary>Called when the program is started.</summary>
+        /// <param name="args">Command line arguments. If specified, then
+        /// interpreted as a number that defines how many numbers are computed.
+        /// </param>
         private static void Main(string[] args)
         {
             int end = 1000;
@@ -49,7 +56,7 @@ namespace PrimeAnalyzer
         {
             if (n <= 1)
             {
-                return new List<int>();
+                return EmptyList;
             }
 
             List<int> result = new();
