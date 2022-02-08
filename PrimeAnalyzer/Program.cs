@@ -8,20 +8,24 @@ namespace PrimeAnalyzer
         /// Called when the program is started.
         /// </summary>
         /// <param name="args">
-        /// Command line arguments. If specified, then interpreted as a number
-        /// that defines how many numbers are computed.
+        /// Command line arguments. If specified, then interpreted as numbers
+        /// that define in which interval numbers are computed.
         /// </param>
         private static void Main(string[] args)
         {
             PrimeFactorDisassembler disassembler = new();
 
+            int start = 0;
             int end = 1000;
-            if (args.Length != 0)
+            if (args.Length == 2)
             {
-                end = int.Parse(args[0]);
+                start = int.Parse(args[0]);
+                end = int.Parse(args[1]);
             }
 
-            for (int i = 0; i < end; ++i)
+            int begin = DateTime.Now.Millisecond;
+
+            for (int i = start; i < end; ++i)
             {
                 Console.Write(i + " is");
 
@@ -47,6 +51,10 @@ namespace PrimeAnalyzer
                 }
                 Console.WriteLine();
             }
+
+            int finish = DateTime.Now.Millisecond;
+            Console.WriteLine();
+            Console.WriteLine("Runime in milliseconds: " + (finish - begin));
         }
     }
 }
