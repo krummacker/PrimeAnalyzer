@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.810.17
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeAnalyzer", "PrimeAnalyzer\PrimeAnalyzer.csproj", "{269E800F-5E92-442B-9A95-F978F4FB3386}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeAnalyzerTest", "PrimeAnalyzerTest\PrimeAnalyzerTest.csproj", "{2548B06F-A1B7-4470-ABD9-8F396F49682F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{269E800F-5E92-442B-9A95-F978F4FB3386}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{269E800F-5E92-442B-9A95-F978F4FB3386}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{269E800F-5E92-442B-9A95-F978F4FB3386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2548B06F-A1B7-4470-ABD9-8F396F49682F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2548B06F-A1B7-4470-ABD9-8F396F49682F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2548B06F-A1B7-4470-ABD9-8F396F49682F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2548B06F-A1B7-4470-ABD9-8F396F49682F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
