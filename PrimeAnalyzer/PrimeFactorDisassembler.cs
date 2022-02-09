@@ -20,7 +20,7 @@ namespace PrimeAnalyzer
         }
 
         /// <summary>
-        /// For n>1, returns the list of prime numbers which,multiplied with
+        /// For n>1, returns the list of prime numbers which, multiplied with
         /// each other, result in n. For n<=1, returns the empty list.
         /// </summary>
         /// <param name="n">The number to split into prime factors.</param>
