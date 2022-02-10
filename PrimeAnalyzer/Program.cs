@@ -23,7 +23,7 @@ namespace PrimeAnalyzer
                 end = int.Parse(args[1]);
             }
 
-            int begin = DateTime.Now.Millisecond;
+            DateTime begin = DateTime.Now;
 
             for (int i = start; i < end; ++i)
             {
@@ -52,9 +52,10 @@ namespace PrimeAnalyzer
                 Console.WriteLine();
             }
 
-            int finish = DateTime.Now.Millisecond;
+            DateTime finish = DateTime.Now;
+            TimeSpan duration = finish - begin;
             Console.WriteLine();
-            Console.WriteLine("Runime in milliseconds: " + (finish - begin));
+            Console.WriteLine("Runtime: " + duration);
         }
     }
 }
