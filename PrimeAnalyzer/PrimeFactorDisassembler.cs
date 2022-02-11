@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Dirk Krummacker
+
+using System.Collections.Generic;
 
 namespace PrimeAnalyzer
 {
