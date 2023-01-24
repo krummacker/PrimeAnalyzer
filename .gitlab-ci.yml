@@ -25,7 +25,7 @@ variables:
   # 1) Name of directory where restore and build objects are stored.
   OBJECTS_DIRECTORY: 'obj'
   # 2) Name of directory used for keeping restored dependencies.
-  NUGET_PACKAGES_DIRECTORY: '.nuget'
+  # NUGET_PACKAGES_DIRECTORY: '.nuget'
   # 3) A relative path to the source code from project repository root.
   # NOTE: Please edit this path so it matches the structure of your project!
   SOURCE_CODE_PATH: '*/*/'
@@ -71,7 +71,7 @@ cache:
   # will already be there — unzipped from cache.
 
   # 'pull-push' policy is the default cache policy, you do not have to specify it explicitly.
-  policy: pull-push
+  # policy: pull-push
 
 # ### Restore project dependencies
 #
@@ -112,9 +112,5 @@ tests:
   # You may want to define separate testing jobs for different types of testing
   # (e.g. integration tests, unit tests etc).
   script:
-    - 'dotnet test --no-restore ./PrimeAnalyzerTest'
+    - 'dotnet test ./PrimeAnalyzerTest'
 
-deploy:
-  stage: deploy
-  script: echo "Define your deployment script!"
-  environment: production
