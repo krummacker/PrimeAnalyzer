@@ -84,7 +84,8 @@ cache:
 #
 # Learn more about GitLab cache: https://docs.gitlab.com/ee/ci/caching/index.html
 before_script:
-  - 'dotnet restore --packages $NUGET_PACKAGES_DIRECTORY'
+  - 'dotnet restore --packages ./PrimeAnalyzer/$NUGET_PACKAGES_DIRECTORY'
+  - 'dotnet restore --packages ./PrimeAnalyzerTest/$NUGET_PACKAGES_DIRECTORY'
 
 build:
   stage: build
