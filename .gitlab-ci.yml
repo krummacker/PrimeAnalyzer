@@ -83,9 +83,9 @@ cache:
 # in the root of project repository, so its content can be cached.
 #
 # Learn more about GitLab cache: https://docs.gitlab.com/ee/ci/caching/index.html
-before_script:
-  - 'dotnet restore --packages ./PrimeAnalyzer/$NUGET_PACKAGES_DIRECTORY'
-  - 'dotnet restore --packages ./PrimeAnalyzerTest/$NUGET_PACKAGES_DIRECTORY'
+# before_script:
+#   - 'dotnet restore --packages ./PrimeAnalyzer/$NUGET_PACKAGES_DIRECTORY'
+#   - 'dotnet restore --packages ./PrimeAnalyzerTest/$NUGET_PACKAGES_DIRECTORY'
 
 build:
   stage: build
@@ -98,8 +98,8 @@ build:
   # where it is located (e.g. 'dotnet build ./src/ConsoleApp').
   # Only one project path can be passed as a parameter to 'dotnet build' command.
   script:
-    - 'dotnet build --no-restore ./PrimeAnalyzer'
-    - 'dotnet build --no-restore ./PrimeAnalyzerTest'
+    - 'dotnet build ./PrimeAnalyzer'
+    - 'dotnet build ./PrimeAnalyzerTest'
 
 tests:
   stage: test
