@@ -1,8 +1,4 @@
-﻿// Copyright (c) Dirk Krummacker
-
-using System.Collections.Generic;
-
-namespace PrimeAnalyzer
+﻿namespace PrimeAnalyzer
 {
     /// <summary>
     /// A PrimeFactorDisassembler can split up numbers into primes.

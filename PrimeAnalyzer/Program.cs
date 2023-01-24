@@ -1,6 +1,4 @@
-﻿// Copyright (c) Dirk Krummacker
-
-using System;
+﻿using System;
 
 namespace PrimeAnalyzer
 {
