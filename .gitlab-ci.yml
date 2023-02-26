@@ -1,12 +1,11 @@
 image: mcr.microsoft.com/dotnet/sdk:latest
 
-build:
-  stage: build
+stages:
+  - check
+  
+check:
+  stage: check
   script:
     - 'dotnet build ./PrimeAnalyzer'
     - 'dotnet build ./PrimeAnalyzerTest'
-
-tests:
-  stage: test
-  script:
     - 'dotnet test ./PrimeAnalyzerTest'
