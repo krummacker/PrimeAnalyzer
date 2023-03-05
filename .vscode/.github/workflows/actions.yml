@@ -1,0 +1,13 @@
+name: GitHub Actions
+on: [push]
+jobs:
+  Check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: dotnet build ./PrimeAnalyzer
+      - run: dotnet build ./PrimeAnalyzerTest
+      - run: dotnet test ./PrimeAnalyzerTest
+      - run: ls -la ./PrimeAnalyzer/bin/Debug/net6.0/
+      - run: ./PrimeAnalyzer/bin/Debug/net6.0/PrimeAnalyzer

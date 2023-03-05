@@ -1,0 +1,14 @@
+image: mcr.microsoft.com/dotnet/sdk:6.0
+
+pipelines:
+  default:
+    - step:
+        name: Check
+        script:
+          - dotnet build ./PrimeAnalyzer
+          - dotnet build ./PrimeAnalyzerTest
+          - dotnet test ./PrimeAnalyzerTest
+          - ls -la ./PrimeAnalyzer/bin/Debug/net6.0/
+          - ./PrimeAnalyzer/bin/Debug/net6.0/PrimeAnalyzer
+
+
