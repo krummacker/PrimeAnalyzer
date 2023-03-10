@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/PrimeAnalyzer/bin/Debug/net7.0/PrimeAnalyzer.dll",
+            "program": "${workspaceFolder}/PrimeAnalyzer/bin/Debug/net6.0/PrimeAnalyzer.dll",
             "args": [],
             "cwd": "${workspaceFolder}/PrimeAnalyzer",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
