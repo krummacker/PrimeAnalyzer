@@ -12,6 +12,13 @@ check:
     - ls -la ./PrimeAnalyzer/bin/Debug/net6.0/
     - ./PrimeAnalyzer/bin/Debug/net6.0/PrimeAnalyzer
 
+trivy:
+  stage: test
+  image: curlimages/curl:latest
+  script:
+    - curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b .
+    - ./trivy fs .
+
 # test stage
 include:
   - template: Jobs/SAST.gitlab-ci.yml
